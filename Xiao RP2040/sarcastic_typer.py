@@ -22,10 +22,10 @@ display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=32)
 text_area = adafruit_display_text.label.Label(terminalio.FONT, text="Normal Mode.")
 text_area2 = adafruit_display_text.label.Label(terminalio.FONT, text="sArCaStIc MoDe!")
 # Set the x and y position of the text box
-text_area.x = 28
-text_area.y = 14
-text_area2.x = 22
-text_area2.y = 14
+text_area.anchor_point = (0.5, 0.5)
+text_area.anchored_position = (128 / 2, 32 / 2)
+text_area2.anchor_point = (0.5, 0.5)
+text_area2.anchored_position = (128 / 2, 32 / 2)
 # Add the text box to the display
 display.show(text_area)
 
