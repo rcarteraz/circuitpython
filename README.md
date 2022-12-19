@@ -1,2 +1,2 @@
 # circuitpython
-Stuff I am learning about CircuitPython
+I'm starting to learn about circuitpython. Here is where I'll store projects I'm learning from or have created. 
