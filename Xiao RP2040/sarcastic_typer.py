@@ -16,16 +16,16 @@ displayio.release_displays()
 # Initialize the display
 i2c = board.I2C()
 display_bus = displayio.I2CDisplay(i2c, device_address=0x3C)
-display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=32)
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
 
 # Create a text box
-text_area = adafruit_display_text.label.Label(terminalio.FONT, text="Normal Mode.")
-text_area2 = adafruit_display_text.label.Label(terminalio.FONT, text="sArCaStIc MoDe!")
+text_area = adafruit_display_text.label.Label(terminalio.FONT, scale=2, text="Normal\n Mode.")
+text_area2 = adafruit_display_text.label.Label(terminalio.FONT, scale=2, text="sArCaStIc\n  MoDe!")
 # Set the x and y position of the text box
 text_area.anchor_point = (0.5, 0.5)
-text_area.anchored_position = (128 / 2, 32 / 2)
+text_area.anchored_position = (128 / 2, 64 / 2)
 text_area2.anchor_point = (0.5, 0.5)
-text_area2.anchored_position = (128 / 2, 32 / 2)
+text_area2.anchored_position = (128 / 2, 64 / 2)
 # Add the text box to the display
 display.show(text_area)
 
