@@ -1,5 +1,3 @@
-# This is a simple script for writing sarcastically. It will display a message stating "Normal Mode." while a switch is in the off position. When the switch is flipped to on position, it will change that message to "sArCaStIc MoDe!" and then send the keycode for CAPS_Lock to the connected computer at an interval of .1 seconds. 
-
 import board
 import time
 import usb_hid
@@ -26,8 +24,6 @@ text_area.anchor_point = (0.5, 0.5)
 text_area.anchored_position = (128 / 2, 64 / 2)
 text_area2.anchor_point = (0.5, 0.5)
 text_area2.anchored_position = (128 / 2, 64 / 2)
-# Add the text box to the display
-display.show(text_area)
 
 # Initialize Keyboard
 kbd = Keyboard(usb_hid.devices)
@@ -39,8 +35,10 @@ switch.pull = Pull.UP
 
 while True:
     if switch.value:
+        # Add the text box to the display
         display.show(text_area)
     else:
+        # Add the text box to the display
         display.show(text_area2)
         kbd.send(Keycode.CAPS_LOCK)
         time.sleep(0.1)
